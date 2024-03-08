@@ -1,6 +1,6 @@
 # Astro | Security Discord Bot
 
-Astro is an innovative, open-source Discord bot tailored for cyber security enthusiasts and professionals. Designed to operate within Discord servers, Astro brings a suite of cyber security tools directly to your chat, facilitating swift and efficient security checks and network analysis through simple commands. With features ranging from IP geolocation to open TCP port scanning, Astro is your go-to bot for on-the-fly cyber security operations.
+Astro is an innovative, open-source Discord bot tailored for cyber security enthusiasts and professionals. Designed to operate within Discord servers, Astro brings a suite of cyber security tools directly to your chat, facilitating swift and efficient security checks and network analysis through simple commands. With features ranging from IP geolocation to open TCP port scanning, Astro is your go-to bot for on-the-fly cyber security operations. A work in progress, but will have more commands with time.
 
 ## Features
 
