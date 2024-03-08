@@ -12,9 +12,9 @@ class Basic(commands.Cog):
         ctx.send("This is an info command for ryan's astro bot")
         
         embed = nextcord.Embed(
-            title="Test Embed",
-            description="Test Embed 2",
-            color=0x00ff00
+            title="Astro Info Menu",
+            description="Commands\n$info - offers a comprehensive outline of all of astro's commands.\n#ip <ip_address> - provides geolocation of IP Address",
+            color=0xA020F0
         )
         await ctx.send(embed=embed)
 

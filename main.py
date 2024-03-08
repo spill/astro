@@ -8,10 +8,12 @@ load_dotenv('config.env')
 intents = nextcord.Intents.all()
 intents.members = True
 
-bot = commands.Bot(command_prefix="!", intents=intents)
+bot = commands.Bot(command_prefix="$", intents=intents)
 
 @bot.event
 async def on_ready():
+    await bot.change_presence(activity=nextcord.Streaming(name="astro bot", url="https://twitch.tv/astro_bot"))
+    print("Bot is now set to streaming status.")
     print(f"hello, this is a bot made by ryan {bot.user.name} ({bot.user.id})")
     print('___________________________________________________________________')
     
