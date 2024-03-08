@@ -1,7 +1,9 @@
 import nextcord
 import os
-import config
 from nextcord.ext import commands
+from dotenv import load_dotenv
+
+load_dotenv('config.env')
 
 intents = nextcord.Intents.all()
 intents.members = True
@@ -19,4 +21,4 @@ for filename in os.listdir('./cogs'):
     if filename.endswith('.py'):
         bot.load_extension(f'cogs.{filename[:-3]}')
 
-bot.run(config.TOKEN)
+bot.run(os.getenv('TOKEN'))
