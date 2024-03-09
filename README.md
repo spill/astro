@@ -25,7 +25,7 @@ Astro is an innovative, open-source Discord bot tailored for cyber security enth
 Once Astro is added to your server, you can start using the cyber security commands immediately. Here are some examples:
 
 - `$ip <IP_ADDRESS>`: Retrieves the geolocation of the specified IP address.
-- `$scan <TARGET_IP>`: Performs an open TCP port scan on the target IP.
+- `$scan <TARGET_IP> <INITIAL_PORT> <FINAL_PORT>`: Performs an open TCP port scan on the target IP.
 
 Replace `$` with your custom command prefix if you have configured one.
 
