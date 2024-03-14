@@ -15,12 +15,12 @@ class Reminder(commands.Cog):
             'd': 86400,
             'w': 604800
         }
-        
-        unit = time[-1] # used to get the last character of the string time
+
+        unit = time[-1]
         if unit not in time_units:
-            await ctx.send("Invalid time unit. Please use s,m,h,d,w")
+            await ctx.send("Invalid time unit. Please use 's', 'm', 'h', 'd', or 'w'.")
             return
-        
+
         try:
             duration = int(time[:-1]) * time_units[unit]
         except ValueError:
@@ -31,12 +31,23 @@ class Reminder(commands.Cog):
             await ctx.send("Please provide a time greater than 0.")
             return
 
-        message = await ctx.send(f"Timer has been set for {duration} seconds.")
-        
+        message_content = f"🕐 Timer has been set for {duration} seconds.\n"
+        if reminder:
+            message_content += f"🔔 Reminder: {reminder}"
+            
+        embed = nextcord.Embed(
+            title="Reminder",
+            description=message_content,
+            color=0xA020F0
+        )
+
+        message = await ctx.send(embed=embed)
+
         while duration:
             await asyncio.sleep(1)
             duration -= 1
-            await message.edit(content=f"Timer: {duration} seconds left")
+            embed.description = f"🕐 Timer: {duration} seconds left.\n{message_content.splitlines()[-1]}"
+            await message.edit(embed=embed)
 
         await ctx.send(f"{ctx.author.mention}, your timer is complete.")
                 
